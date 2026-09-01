@@ -1,0 +1,39 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>dev.gaphunter.enumordinalpersistencecompanion</id>
+    <name>Enum-Ordinal Persistence Companion</name>
+    <vendor>Gap Hunter Labs</vendor>
+    <description><![CDATA[
+        <p>Warning on a JPA <code>@Enumerated</code> field with no
+        explicit <code>EnumType.STRING</code>, on a real
+        <code>@Entity</code> class -- JPA's own default is
+        <code>ORDINAL</code>, and reordering or inserting a value in the
+        middle of the enum after data has already been persisted
+        silently corrupts existing records (the stored ordinal no
+        longer corresponds to the same constant).</p>
+        <p>Confirms the field genuinely reaches persistent storage (the
+        containing class is a real JPA <code>@Entity</code>), not just
+        an annotation checked in isolation. A well-documented fragility
+        (Baeldung and official JPA persistence guides); no Marketplace
+        plugin found that flags it, despite several enum-tooling plugins
+        existing.</p>
+        <p>Stated honestly: v0.1 only standard JPA <code>@Enumerated</code>
+        on an <code>@Entity</code> class -- doesn't cover custom
+        serialization (Jackson <code>@JsonValue</code>, protobuf enum) or
+        non-JPA persistence frameworks.</p>
+        <p>Free. No license nags, no telemetry, no network calls.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection language="JAVA"
+            groupName="Enum-Ordinal Persistence Companion"
+            displayName="Enum persisted as ORDINAL"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="dev.gaphunter.enumordinalpersistencecompanion.inspection.OrdinalPersistenceInspection"/>
+        <notificationGroup id="Enum-Ordinal Persistence Companion" displayType="BALLOON"/>
+    </extensions>
+</idea-plugin>
