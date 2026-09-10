@@ -4,6 +4,12 @@ Warning on a JPA `@Enumerated` field with no explicit
 `EnumType.STRING`, on a real `@Entity` class -- JPA's own default is
 `ORDINAL`.
 
+## Screenshots
+
+![Screenshot 1](docs/screenshots/Screenshot_1.png)
+
+![Screenshot 2](docs/screenshots/Screenshot_2.png)
+
 ## Why it exists
 
 Reordering or inserting a value in the middle of the enum after data
