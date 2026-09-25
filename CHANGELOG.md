@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [0.1.1]
+
+### Fixed
+
+- Review/star CTA now links to this plugin's own Marketplace
+  reviews page instead of the vendor's generic plugin list.
+
 ## [0.1.0]
 
 ### Added
@@ -15,5 +22,6 @@
 - Confirms real persistence (the containing class is a genuine
   `@Entity`) -- never flags the annotation on a plain DTO/POJO.
 
-[Unreleased]: https://github.com/GapHunterLabs/enum-ordinal-persistence-companion/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/GapHunterLabs/enum-ordinal-persistence-companion/compare/0.1.1...HEAD
+[0.1.1]: https://github.com/GapHunterLabs/enum-ordinal-persistence-companion/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/GapHunterLabs/enum-ordinal-persistence-companion/commits/0.1.0
