@@ -1,0 +1,10 @@
+<html>
+<body>
+Reports a JPA <code>@Enumerated</code> field without <code>EnumType.STRING</code> in an <code>@Entity</code>
+class.
+<!-- tooltip end -->
+<p>The JPA default is <code>ORDINAL</code>: the database stores the position of the constant. Inserting or reordering
+enum values after data exists silently changes the meaning of stored rows. <code>@Enumerated(EnumType.STRING)</code>
+stores the name instead.</p>
+</body>
+</html>
